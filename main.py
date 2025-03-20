@@ -3,15 +3,11 @@ from PIL import Image
 import io
 import pandas as pd
 import requests
-import os
 
-API_KEY = os.getenv("HUGGINGFACE_API_KEY")
-
+# Hugging Face API details
 API_URL_GENDER = "https://api-inference.huggingface.co/models/rizvandwiki/gender-classification"
 API_URL_DETECTOR = "https://api-inference.huggingface.co/models/umm-maybe/AI-image-detector"
-
-headers = {"Authorization": f"Bearer {API_KEY}"}
-
+headers = {"Authorization": "Bearer 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"}
 
 def query_gender(image):
     # Convert image to JPEG format
@@ -37,7 +33,7 @@ def gender_classification():
 
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-        st.image(image, caption='Uploaded Image.', use_container_width=True)
+        st.image(image, caption='Uploaded Image.', use_column_width=True)
 
         # Call the Hugging Face API
         with st.spinner('Classifying...'):
@@ -72,7 +68,7 @@ def ai_image_detector():
 
     if uploaded_file is not None:
         # Display the uploaded image
-        st.image(uploaded_file, caption='Uploaded Image.', use_container_width=True)
+        st.image(uploaded_file, caption='Uploaded Image.', use_column_width=True)
 
         # Convert image to bytes
         image_bytes = uploaded_file.read()
@@ -106,7 +102,7 @@ def is_artificial_detector():
 
     if uploaded_file is not None:
         # Display the uploaded image
-        st.image(uploaded_file, caption='Uploaded Image.', use_container_width=True)
+        st.image(uploaded_file, caption='Uploaded Image.', use_column_width=True)
 
         # Convert image to bytes
         image_bytes = uploaded_file.read()
