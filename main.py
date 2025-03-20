@@ -3,6 +3,7 @@ from PIL import Image
 import io
 import pandas as pd
 import requests
+import os
 
 API_KEY = os.getenv("HUGGINGFACE_API_KEY")
 
