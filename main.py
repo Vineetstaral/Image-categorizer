@@ -5,7 +5,7 @@ import pandas as pd
 import requests
 
 # Hugging Face API details
-API_URL_GENDER = "https://api-inference.huggingface.co/models/rizvandwiki/gender-classification"
+API_URL_GENDER = "https://router.huggingface.co/hf-inference/models/rizvandwiki/gender-classification"
 API_URL_DETECTOR = "https://api-inference.huggingface.co/models/umm-maybe/AI-image-detector"
 headers = {"Authorization": "Bearer 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"}
 
